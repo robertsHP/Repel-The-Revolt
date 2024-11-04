@@ -1,40 +1,52 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Scripts/MainMenuScene.cs" type="Script" id=2]
+[ext_resource path="res://Resources/TitleScreen/logo.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/MainMenuScene/MainMenuScene.cs" type="Script" id=2]
+[ext_resource path="res://Resources/TitleScreen/playbutton.png" type="Texture" id=3]
+[ext_resource path="res://Resources/TitleScreen/quitbutton.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/MainMenuScene/PlayButton.cs" type="Script" id=5]
+[ext_resource path="res://Scripts/MainMenuScene/QuitButton.cs" type="Script" id=6]
+[ext_resource path="res://Scripts/MainMenuScene/Title.cs" type="Script" id=7]
 
 [node name="MainMenuScene" type="Control"]
-anchor_right = 1.0
+anchor_right = 1.001
 anchor_bottom = 1.0
+margin_right = -1.02405
+rect_scale = Vector2( 1.00058, 0.99989 )
 script = ExtResource( 2 )
 
 [node name="Panel" type="Panel" parent="."]
 margin_right = 1024.0
 margin_bottom = 600.0
 
-[node name="Label" type="Label" parent="Panel"]
-anchor_right = 0.008
-margin_left = 376.0
-margin_top = 192.0
-margin_right = 638.0
-margin_bottom = 225.0
-text = "Repel The Revolt"
-align = 1
-valign = 1
-uppercase = true
+[node name="Title" type="Sprite" parent="Panel"]
+position = Vector2( 516.7, 145.016 )
+scale = Vector2( 3.59122, 3.59122 )
+texture = ExtResource( 1 )
+script = ExtResource( 7 )
 
-[node name="PlayButton" type="Button" parent="Panel"]
-margin_left = 480.0
-margin_top = 264.0
-margin_right = 537.0
-margin_bottom = 290.0
-text = "Play"
+[node name="PlayButton" type="TextureButton" parent="Panel"]
+margin_left = 465.0
+margin_top = 272.0
+margin_right = 557.0
+margin_bottom = 300.0
+action_mode = 0
+texture_normal = ExtResource( 3 )
+expand = true
+script = ExtResource( 5 )
 
-[node name="QuitButton" type="Button" parent="Panel"]
-margin_left = 480.0
-margin_top = 312.0
-margin_right = 537.0
-margin_bottom = 338.0
-text = "Quit"
+[node name="QuitButton" type="TextureButton" parent="Panel"]
+margin_left = 460.0
+margin_top = 325.0
+margin_right = 554.0
+margin_bottom = 357.0
+texture_normal = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
 
-[connection signal="pressed" from="Panel/PlayButton" to="." method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="Panel/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="mouse_entered" from="Panel/PlayButton" to="Panel/PlayButton" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/PlayButton" to="Panel/PlayButton" method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="Panel/PlayButton" to="Panel/PlayButton" method="_on_PlayButton_pressed"]
+[connection signal="mouse_entered" from="Panel/QuitButton" to="Panel/QuitButton" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/QuitButton" to="Panel/QuitButton" method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="Panel/QuitButton" to="Panel/QuitButton" method="_on_QuitButton_pressed"]
