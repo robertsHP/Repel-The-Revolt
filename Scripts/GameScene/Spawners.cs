@@ -45,7 +45,9 @@ namespace Game {
 		}
 		public void StartDelayTimer () {
 			spawnDelayTimer = new Timer();
+
 			AddChild(spawnDelayTimer);
+
 			spawnDelayTimer.WaitTime = startingWaitTime;
 			spawnDelayTimer.OneShot = false;
 			spawnDelayTimer.Connect("timeout", this, "SpawnMethod");
@@ -60,6 +62,7 @@ namespace Game {
 			int rangeNum = rng.RandiRange(0, spawnRange);
 			int i = 0;
 			int currentRangeCount = 0, prevRangeCount = 0;
+			
 			while (i < rangeNums.Length) {
 				currentRangeCount += rangeNums[i];
 				if(prevRangeCount <= rangeNum && rangeNum < currentRangeCount) {

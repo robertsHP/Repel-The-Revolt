@@ -27,8 +27,10 @@ namespace Game {
 		public void LoadObstacleMenu (string path, Obstacle obstacle) {
 			if(GameScene.state != GameScene.State.Menu) {
 				string fullPath = "UI/Menus/" + path;
+
 				ObstacleMenu obstacleMenu = (ObstacleMenu) GameScene.LoadSceneNode(fullPath);
 				obstacleMenu.SetObstacle(obstacle);
+				
 				AddChild(obstacleMenu);
 				GameScene.state = GameScene.State.Menu;
 			}

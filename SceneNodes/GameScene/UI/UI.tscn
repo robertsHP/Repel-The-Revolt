@@ -1,11 +1,19 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=21 format=2]
 
+[ext_resource path="res://Resources/UI/PistolIcon.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/GameScene/UI/GameUI/SelectionBox.cs" type="Script" id=2]
 [ext_resource path="res://Scripts/GameScene/UI/GameUI/GunButtons.cs" type="Script" id=3]
 [ext_resource path="res://Scripts/GameScene/UI/GameUI/TopInterface.cs" type="Script" id=4]
 [ext_resource path="res://Scripts/GameScene/UI/UI.cs" type="Script" id=5]
 [ext_resource path="res://Resources/UI/Selection.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/GameScene/UI/GameUI/MenuButtons.cs" type="Script" id=7]
+[ext_resource path="res://Resources/UI/ShotgunIcon.png" type="Texture" id=8]
+[ext_resource path="res://Resources/UI/ShotgunIconPressed.png" type="Texture" id=9]
+[ext_resource path="res://Resources/UI/PistolIconPressed.png" type="Texture" id=10]
+[ext_resource path="res://Resources/UI/RifleIcon.png" type="Texture" id=11]
+[ext_resource path="res://Resources/UI/RifleIconPressed.png" type="Texture" id=12]
+[ext_resource path="res://Resources/UI/RPGIconPressed.png" type="Texture" id=13]
+[ext_resource path="res://Resources/UI/RPGIcon.png" type="Texture" id=14]
 
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.196078, 1, 0, 1 )
@@ -132,46 +140,42 @@ margin_bottom = 56.0
 rect_pivot_offset = Vector2( -8, 16 )
 script = ExtResource( 3 )
 
-[node name="Gun1Button" type="Button" parent="TopInterface/GunButtons"]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 104.0
-margin_bottom = 40.0
-disabled = true
-toggle_mode = true
-action_mode = 0
-text = "Pistol"
+[node name="Gun1Button" type="TextureButton" parent="TopInterface/GunButtons"]
+margin_left = 57.0
+margin_top = 5.0
+margin_right = 126.0
+margin_bottom = 45.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 10 )
+expand = true
 
-[node name="Gun2Button" type="Button" parent="TopInterface/GunButtons"]
-margin_left = 112.0
-margin_top = 8.0
-margin_right = 208.0
-margin_bottom = 40.0
-disabled = true
-toggle_mode = true
-action_mode = 0
-text = "Shotgun"
+[node name="Gun2Button" type="TextureButton" parent="TopInterface/GunButtons"]
+margin_left = 135.0
+margin_top = 5.0
+margin_right = 175.0
+margin_bottom = 45.0
+rect_scale = Vector2( 2.793, 1 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+expand = true
 
-[node name="Gun3Button" type="Button" parent="TopInterface/GunButtons"]
-margin_left = 216.0
-margin_top = 8.0
-margin_right = 319.0
-margin_bottom = 40.0
-rect_rotation = -0.158039
-disabled = true
-toggle_mode = true
-action_mode = 0
-text = "Assault Rifle"
+[node name="Gun3Button" type="TextureButton" parent="TopInterface/GunButtons"]
+margin_left = 254.0
+margin_top = 6.0
+margin_right = 367.0
+margin_bottom = 45.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+expand = true
 
-[node name="Gun4Button" type="Button" parent="TopInterface/GunButtons"]
-margin_left = 328.0
-margin_top = 8.0
-margin_right = 424.0
-margin_bottom = 40.0
-disabled = true
-toggle_mode = true
-action_mode = 0
-text = "RPG"
+[node name="Gun4Button" type="TextureButton" parent="TopInterface/GunButtons"]
+margin_left = 372.0
+margin_top = 6.0
+margin_right = 482.0
+margin_bottom = 45.0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 13 )
+expand = true
 
 [node name="MenuButtons" type="Control" parent="TopInterface"]
 margin_left = 864.0
