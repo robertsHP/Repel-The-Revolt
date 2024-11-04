@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/RPGFire.mp3-1c3302b6c251cd0171b4c81a2e1392f5.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Weapons/RPGFire.mp3"
+dest_files=[ "res://.import/RPGFire.mp3-1c3302b6c251cd0171b4c81a2e1392f5.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

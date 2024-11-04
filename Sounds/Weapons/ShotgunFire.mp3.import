@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ShotgunFire.mp3-7cc9df712951566dedb4897e5ef67e3a.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Weapons/ShotgunFire.mp3"
+dest_files=[ "res://.import/ShotgunFire.mp3-7cc9df712951566dedb4897e5ef67e3a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

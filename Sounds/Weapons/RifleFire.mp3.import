@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/RifleFire.mp3-e2287c7e9442cc3e36816e726d31ffc7.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Weapons/RifleFire.mp3"
+dest_files=[ "res://.import/RifleFire.mp3-e2287c7e9442cc3e36816e726d31ffc7.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
