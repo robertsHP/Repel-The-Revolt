@@ -14,9 +14,10 @@ namespace Game {
 			repairFunction = GetNode<RepairFunction>(repairFunctionPath);
 			repairFunction.Ready(GameScene.mainBuilding);
 			
-			Godot.Collections.Array tempPaymentNodes = GetNode(
-				"CoverOverPanel/Guns").GetChildren();
+			Godot.Collections.Array tempPaymentNodes = GetNode("CoverOverPanel/Guns").GetChildren();
+			
 			gunPaymentNodes = new List<GunPayment>();
+
 			foreach (GunPayment paymentNode in tempPaymentNodes) {
 				paymentNode.Ready();
 				gunPaymentNodes.Add(paymentNode);

@@ -20,6 +20,7 @@ namespace Game {
 		public void LoadMenu (string path) {
 			if(GameScene.state != GameScene.State.Menu) {
 				string fullPath = "UI/Menus/" + path;
+				
 				AddChild(GameScene.LoadSceneNode(fullPath));
 				GameScene.state = GameScene.State.Menu;
 			}

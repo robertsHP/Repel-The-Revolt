@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Resources/UI/PistolIcon.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/GameScene/UI/GameUI/SelectionBox.cs" type="Script" id=2]
@@ -14,15 +14,26 @@
 [ext_resource path="res://Resources/UI/RifleIconPressed.png" type="Texture" id=12]
 [ext_resource path="res://Resources/UI/RPGIconPressed.png" type="Texture" id=13]
 [ext_resource path="res://Resources/UI/RPGIcon.png" type="Texture" id=14]
+[ext_resource path="res://Resources/Fonts/PixelifySans-VariableFont_wght.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Resources/UI/MenuButton.png" type="Texture" id=16]
+[ext_resource path="res://Resources/UI/ShopButton.png" type="Texture" id=17]
+[ext_resource path="res://Resources/UI/BuildButton.png" type="Texture" id=18]
 
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.196078, 1, 0, 1 )
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.0196078, 0.517647, 0.784314, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.054902, 1, 0, 1 )
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0.32549, 0.32549, 0.32549, 1 )
-corner_detail = 20
+border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.984314, 0.105882, 0.105882, 1 )
@@ -30,7 +41,7 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0.32549, 0.32549, 0.32549, 1 )
+border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.972549, 0.972549, 0.972549, 1 )
@@ -38,7 +49,7 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0.32549, 0.32549, 0.32549, 1 )
+border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0.211765, 0.211765, 0.211765, 1 )
@@ -46,7 +57,7 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0.32549, 0.32549, 0.32549, 1 )
+border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 1, 0.980392, 0, 1 )
@@ -54,7 +65,7 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0.32549, 0.32549, 0.32549, 1 )
+border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0.211765, 0.211765, 0.211765, 1 )
@@ -62,7 +73,17 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0.32549, 0.32549, 0.32549, 1 )
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=14]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=15]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 15 )
 
 [node name="UI" type="Node2D"]
 position = Vector2( 512, 320 )
@@ -76,6 +97,7 @@ margin_left = -512.0
 margin_top = -320.0
 margin_right = 512.0
 margin_bottom = -257.0
+custom_styles/panel = SubResource( 16 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -92,7 +114,7 @@ margin_left = 16.0
 margin_top = 16.0
 margin_right = 104.0
 margin_bottom = 32.0
-custom_styles/fg = SubResource( 6 )
+custom_styles/fg = SubResource( 17 )
 custom_styles/bg = SubResource( 9 )
 value = 100.0
 percent_visible = false
@@ -120,27 +142,29 @@ percent_visible = false
 
 [node name="MoneyLabel" type="Label" parent="TopInterface"]
 margin_left = 112.0
-margin_top = 16.0
+margin_top = 14.0
 margin_right = 200.0
-margin_bottom = 30.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 14 )
 text = "$0"
 
 [node name="AmmoLabel" type="Label" parent="TopInterface"]
 margin_left = 112.0
-margin_top = 40.0
+margin_top = 37.0
 margin_right = 200.0
-margin_bottom = 54.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 15 )
 text = "0/0"
 
 [node name="GunButtons" type="Control" parent="TopInterface"]
 margin_left = 208.0
 margin_top = 8.0
-margin_right = 824.0
+margin_right = 738.0
 margin_bottom = 56.0
 rect_pivot_offset = Vector2( -8, 16 )
 script = ExtResource( 3 )
 
-[node name="Gun1Button" type="TextureButton" parent="TopInterface/GunButtons"]
+[node name="PistolButton" type="TextureButton" parent="TopInterface/GunButtons"]
 margin_left = 57.0
 margin_top = 5.0
 margin_right = 126.0
@@ -149,7 +173,7 @@ texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 10 )
 expand = true
 
-[node name="Gun2Button" type="TextureButton" parent="TopInterface/GunButtons"]
+[node name="ShotgunButton" type="TextureButton" parent="TopInterface/GunButtons"]
 margin_left = 135.0
 margin_top = 5.0
 margin_right = 175.0
@@ -159,7 +183,7 @@ texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 9 )
 expand = true
 
-[node name="Gun3Button" type="TextureButton" parent="TopInterface/GunButtons"]
+[node name="AssaultRifleButton" type="TextureButton" parent="TopInterface/GunButtons"]
 margin_left = 254.0
 margin_top = 6.0
 margin_right = 367.0
@@ -168,7 +192,7 @@ texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 12 )
 expand = true
 
-[node name="Gun4Button" type="TextureButton" parent="TopInterface/GunButtons"]
+[node name="RPGButton" type="TextureButton" parent="TopInterface/GunButtons"]
 margin_left = 372.0
 margin_top = 6.0
 margin_right = 482.0
@@ -184,25 +208,29 @@ margin_right = 1016.0
 margin_bottom = 56.0
 script = ExtResource( 7 )
 
-[node name="BuildButton" type="Button" parent="TopInterface/MenuButtons"]
-margin_top = 8.0
-margin_right = 45.0
-margin_bottom = 43.0
-text = "Build"
+[node name="BuildButton" type="TextureButton" parent="TopInterface/MenuButtons"]
+margin_left = -85.0
+margin_top = 9.0
+margin_right = -6.0
+margin_bottom = 41.0
+texture_normal = ExtResource( 18 )
+expand = true
 
-[node name="ShopButton" type="Button" parent="TopInterface/MenuButtons"]
-margin_left = 54.0
-margin_top = 8.0
-margin_right = 97.0
-margin_bottom = 43.0
-text = "Shop"
+[node name="ShopButton" type="TextureButton" parent="TopInterface/MenuButtons"]
+margin_left = -6.0
+margin_top = 9.0
+margin_right = 69.0
+margin_bottom = 41.0
+texture_normal = ExtResource( 17 )
+expand = true
 
-[node name="MenuButton" type="Button" parent="TopInterface/MenuButtons"]
-margin_left = 104.0
-margin_top = 8.0
-margin_right = 152.0
-margin_bottom = 43.0
-text = "Menu"
+[node name="MenuButton" type="TextureButton" parent="TopInterface/MenuButtons"]
+margin_left = 69.0
+margin_top = 9.0
+margin_right = 150.0
+margin_bottom = 41.0
+texture_normal = ExtResource( 16 )
+expand = true
 
 [node name="Selection" type="Node2D" parent="."]
 position = Vector2( -512, -320 )
@@ -213,10 +241,10 @@ z_index = 100
 texture = ExtResource( 6 )
 script = ExtResource( 2 )
 
-[connection signal="pressed" from="TopInterface/GunButtons/Gun1Button" to="TopInterface/GunButtons" method="_on_Gun1Button_pressed"]
-[connection signal="pressed" from="TopInterface/GunButtons/Gun2Button" to="TopInterface/GunButtons" method="_on_Gun2Button_pressed"]
-[connection signal="pressed" from="TopInterface/GunButtons/Gun3Button" to="TopInterface/GunButtons" method="_on_Gun3Button_pressed"]
-[connection signal="pressed" from="TopInterface/GunButtons/Gun4Button" to="TopInterface/GunButtons" method="_on_Gun4Button_pressed"]
+[connection signal="pressed" from="TopInterface/GunButtons/PistolButton" to="TopInterface/GunButtons" method="_on_PistolButton_pressed"]
+[connection signal="pressed" from="TopInterface/GunButtons/ShotgunButton" to="TopInterface/GunButtons" method="_on_ShotgunButton_pressed"]
+[connection signal="pressed" from="TopInterface/GunButtons/AssaultRifleButton" to="TopInterface/GunButtons" method="_on_AssaultRifleButton_pressed"]
+[connection signal="pressed" from="TopInterface/GunButtons/RPGButton" to="TopInterface/GunButtons" method="_on_RPGButton_pressed"]
 [connection signal="pressed" from="TopInterface/MenuButtons/BuildButton" to="TopInterface/MenuButtons" method="_on_BuildButton_pressed"]
 [connection signal="pressed" from="TopInterface/MenuButtons/ShopButton" to="TopInterface/MenuButtons" method="_on_ShopButton_pressed"]
 [connection signal="pressed" from="TopInterface/MenuButtons/MenuButton" to="TopInterface/MenuButtons" method="_on_MenuButton_pressed"]
