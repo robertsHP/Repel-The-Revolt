@@ -9,8 +9,3 @@ Ctrl + Left mouse button - Shoot your gun <br>
 2 - Select shotgun <br>
 3 - Select assault rifle <br>
 4 - Select RPG <br>
-# Things to potentially add to the project:
-1) Proper main menu <br>
-2) Tutorial before the games starts <br>
-3) Additional levels <br>
-4) Gameplay balancing <br>
