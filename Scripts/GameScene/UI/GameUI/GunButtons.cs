@@ -11,7 +11,7 @@ namespace Game {
 		public void Init () {
 			indexedButtons = GetChildren();
 
-			foreach (Button button in indexedButtons) {
+			foreach (TextureButton button in indexedButtons) {
 				string key = button.Name.Replace(" ", "").Replace("Button", "");
 				buttons.Add(key, button);
 			}
@@ -29,9 +29,9 @@ namespace Game {
 			}
 		}
 		private void WeaponSelectionWithKeyboard () {
-			for (int i = 0; i < buttons.Count; i++) {
+			for (int i = 0; i < indexedButtons.Count; i++) {
 				if(Input.IsKeyPressed((int) KeyList.Key1 + i)) {
-					TextureButton button = (TextureButton) buttons[i];
+					TextureButton button = (TextureButton) indexedButtons[i];
 					string weaponName = button.Name.Replace(" ", "").Replace("Button", "");
 
 					if(GameScene.mainBuilding.weapons.ContainsKey(weaponName)) {
@@ -40,16 +40,16 @@ namespace Game {
 				}
 			}
 		}
-		private void _on_Gun1Button_pressed() {
+		private void _on_PistolButton_pressed() {
 			SelectWeapon((TextureButton) GetNode("PistolButton"));
 		}
-		private void _on_Gun2Button_pressed() {
+		private void _on_ShotgunButton_pressed() {
 			SelectWeapon((TextureButton) GetNode("ShotgunButton"));
 		}
-		private void _on_Gun3Button_pressed() {
+		private void _on_AssaultRifleButton_pressed() {
 			SelectWeapon((TextureButton) GetNode("AssaultRifleButton"));
 		}
-		private void _on_Gun4Button_pressed() {
+		private void _on_RPGButton_pressed() {
 			SelectWeapon((TextureButton) GetNode("RPGButton"));
 		}
 		private void SelectWeapon (TextureButton nextButton) {

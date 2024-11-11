@@ -29,50 +29,50 @@ border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=17]
 bg_color = Color( 0.054902, 1, 0, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.984314, 0.105882, 0.105882, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.972549, 0.972549, 0.972549, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0.211765, 0.211765, 0.211765, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 1, 0.980392, 0, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0.211765, 0.211765, 0.211765, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="DynamicFont" id=14]
@@ -169,6 +169,8 @@ margin_left = 57.0
 margin_top = 5.0
 margin_right = 126.0
 margin_bottom = 45.0
+toggle_mode = true
+action_mode = 0
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 10 )
 expand = true
@@ -179,6 +181,8 @@ margin_top = 5.0
 margin_right = 175.0
 margin_bottom = 45.0
 rect_scale = Vector2( 2.793, 1 )
+toggle_mode = true
+action_mode = 0
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 9 )
 expand = true
@@ -188,6 +192,8 @@ margin_left = 254.0
 margin_top = 6.0
 margin_right = 367.0
 margin_bottom = 45.0
+toggle_mode = true
+action_mode = 0
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 12 )
 expand = true
@@ -197,6 +203,8 @@ margin_left = 372.0
 margin_top = 6.0
 margin_right = 482.0
 margin_bottom = 45.0
+toggle_mode = true
+action_mode = 0
 texture_normal = ExtResource( 14 )
 texture_pressed = ExtResource( 13 )
 expand = true
@@ -213,6 +221,7 @@ margin_left = -85.0
 margin_top = 9.0
 margin_right = -6.0
 margin_bottom = 41.0
+toggle_mode = true
 texture_normal = ExtResource( 18 )
 expand = true
 
@@ -221,6 +230,7 @@ margin_left = -6.0
 margin_top = 9.0
 margin_right = 69.0
 margin_bottom = 41.0
+toggle_mode = true
 texture_normal = ExtResource( 17 )
 expand = true
 
@@ -229,6 +239,7 @@ margin_left = 69.0
 margin_top = 9.0
 margin_right = 150.0
 margin_bottom = 41.0
+toggle_mode = true
 texture_normal = ExtResource( 16 )
 expand = true
 
