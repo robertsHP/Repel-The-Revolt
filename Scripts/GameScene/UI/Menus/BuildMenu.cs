@@ -11,7 +11,7 @@ namespace Game {
 		public Label towerCostLabel;
 		public Label mineFieldCostLabel;
 		
-		public override void _Ready () {
+		protected override void Ready1 () {
 			wallCostLabel = GetNode<Label>(wallCostLabelPath);
 			towerCostLabel = GetNode<Label>(towerCostLabelPath);
 			mineFieldCostLabel = GetNode<Label>(mineFieldCostLabelPath);
@@ -39,16 +39,21 @@ namespace Game {
 		}
 		private void SpawnStructureSprite (Type obstacleType) {
 			Sprite obstacleSprite = new Sprite ();
+
 			obstacleSprite.Name = obstacleType.Name;
+
 			var txtr = (Texture) Global.M.LoadTexture("Obstacles/"+obstacleType.Name+".png");
+
 			obstacleSprite.Texture = txtr;
 			obstacleSprite.Position = GameScene.ui.selectionBox.Position;
+
 			GameScene.ui.selectionNode.AddChild(obstacleSprite);
 			GameScene.ui.selectionNode.MoveChild(obstacleSprite, 0);
 			GameScene.ui.selectionBox.tempBuildingSprite = obstacleSprite;
 			GameScene.ui.selectionBox.tempBuildingType = obstacleType;
 			GameScene.ui.selectionBox.Show();
 			GameScene.state = GameScene.State.TilePlace;
+			
 			QueueFree();
 		}
 	}

@@ -2,8 +2,9 @@ using Godot;
 using System;
 
 namespace Game {
-	public class Menu : Panel {
+	public class Menu : Control {
 		public override void _Ready () {
+			GameScene.paused = true;
 			Ready1();
 		}
 		public override void _Process(float delta) {
@@ -23,6 +24,8 @@ namespace Game {
 		public void QueueFreeAndSetStateToDefault () {
 			GameScene.state = GameScene.State.Default;
 			QueueFree();
+
+			GameScene.paused = false;
 		}
 	}
 }

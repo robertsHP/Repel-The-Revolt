@@ -12,6 +12,9 @@ namespace Game {
 		private void _on_ShopButton_pressed () {
 			GameScene.ui.LoadMenu("ShopMenu");
 		}
+		private void _on_MenuButton_pressed () {
+			GameScene.ui.LoadMenu("OptionsMenu");
+		}
 		private void MenuInput () {
 			if(Input.IsKeyPressed((int) KeyList.S)) {
 				GameScene.ui.LoadMenu("ShopMenu");
@@ -20,10 +23,6 @@ namespace Game {
 			} else if (Input.IsKeyPressed((int) KeyList.M)) {
 				GameScene.ui.LoadMenu("OptionsMenu");
 			}
-		}
-		private void _on_MenuButton_pressed () {
-			GameScene.paused = true;
-			GameScene.ui.LoadMenu("OptionsMenu");
 		}
 	}
 }
