@@ -4,6 +4,7 @@ using System;
 namespace Game {
 	public class AmmoPurchase : ShopPurchaseNode {
 		protected override void Ready1 () {}
+		
 		protected override void Process1 () {
 			string name = gunPayment.gunPurchaseNode.GetWeaponNameFromResourcePath();
 			if(GameScene.mainBuilding.weapons.ContainsKey(name)) {

@@ -1,29 +1,61 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Resources/UI/DemolishIcon.png" type="Texture" id=1]
 [ext_resource path="res://Resources/UI/RepairIcon.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/GameScene/UI/Menus/TowerMenu.cs" type="Script" id=3]
+[ext_resource path="res://Resources/Fonts/Tiny5-Regular.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Scripts/GameScene/UI/Menus/Functionality/RepairFunction.cs" type="Script" id=5]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0196078, 0.517647, 0.784314, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.278431, 0.745098, 1, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.278431, 0.745098, 1, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0392157, 0.584314, 0.878431, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.196078, 1, 0, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0.32549, 0.32549, 0.32549, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
 corner_detail = 20
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.984314, 0.105882, 0.105882, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0.32549, 0.32549, 0.32549, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
 
-[node name="TowerMenu" type="Panel"]
-self_modulate = Color( 1, 1, 1, 0.384314 )
+[node name="TowerMenu" type="Control"]
 margin_left = -512.0
 margin_top = -304.0
 margin_right = 512.0
@@ -36,28 +68,38 @@ margin_left = 296.0
 margin_top = 246.0
 margin_right = 736.0
 margin_bottom = 352.0
+custom_styles/panel = SubResource( 3 )
 
 [node name="BackButton" type="Button" parent="CoverOverPanel"]
-margin_left = 176.0
-margin_top = 74.0
-margin_right = 256.0
-margin_bottom = 98.0
+margin_left = 177.0
+margin_top = 71.0
+margin_right = 257.0
+margin_bottom = 97.0
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 4 )
 text = "Back"
 
 [node name="MenuTitle" type="Label" parent="CoverOverPanel"]
-margin_left = 200.0
-margin_top = 10.0
-margin_right = 240.0
-margin_bottom = 24.0
+margin_left = 193.0
+margin_top = 8.0
+margin_right = 241.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 4 )
 text = "Tower"
 align = 1
 valign = 1
 
 [node name="DemolishButton" type="Button" parent="CoverOverPanel"]
-margin_left = 328.0
-margin_top = 34.0
-margin_right = 424.0
-margin_bottom = 60.0
+margin_left = 329.0
+margin_top = 33.0
+margin_right = 428.0
+margin_bottom = 59.0
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 4 )
 text = "Demolish"
 icon = ExtResource( 1 )
 
@@ -70,15 +112,21 @@ script = ExtResource( 5 )
 
 [node name="CostLabel" type="Label" parent="CoverOverPanel/RepairFunction"]
 margin_left = 232.0
-margin_right = 344.0
+margin_right = 308.0
 margin_bottom = 26.0
+custom_fonts/font = ExtResource( 4 )
 text = "0$"
 valign = 1
 
 [node name="PurchaseButton" type="Button" parent="CoverOverPanel/RepairFunction"]
-margin_left = 144.0
-margin_right = 224.0
-margin_bottom = 26.0
+margin_left = 142.0
+margin_top = -1.0
+margin_right = 227.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 4 )
 text = "Repair"
 icon = ExtResource( 2 )
 

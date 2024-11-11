@@ -11,7 +11,7 @@ namespace Game {
 		public Label towerCostLabel;
 		public Label mineFieldCostLabel;
 		
-		public override void _Ready () {
+		protected override void Ready1 () {
 			wallCostLabel = GetNode<Label>(wallCostLabelPath);
 			towerCostLabel = GetNode<Label>(towerCostLabelPath);
 			mineFieldCostLabel = GetNode<Label>(mineFieldCostLabelPath);

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Resources/UI/PistolIcon.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/GameScene/UI/GameUI/SelectionBox.cs" type="Script" id=2]
@@ -14,7 +14,7 @@
 [ext_resource path="res://Resources/UI/RifleIconPressed.png" type="Texture" id=12]
 [ext_resource path="res://Resources/UI/RPGIconPressed.png" type="Texture" id=13]
 [ext_resource path="res://Resources/UI/RPGIcon.png" type="Texture" id=14]
-[ext_resource path="res://Resources/Fonts/PixelifySans-VariableFont_wght.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Resources/Fonts/Tiny5-Regular.tres" type="DynamicFont" id=15]
 [ext_resource path="res://Resources/UI/MenuButton.png" type="Texture" id=16]
 [ext_resource path="res://Resources/UI/ShopButton.png" type="Texture" id=17]
 [ext_resource path="res://Resources/UI/BuildButton.png" type="Texture" id=18]
@@ -74,16 +74,6 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="DynamicFont" id=14]
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 15 )
-
-[sub_resource type="DynamicFont" id=15]
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 15 )
 
 [node name="UI" type="Node2D"]
 position = Vector2( 512, 320 )
@@ -145,7 +135,7 @@ margin_left = 112.0
 margin_top = 14.0
 margin_right = 200.0
 margin_bottom = 34.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = ExtResource( 15 )
 text = "$0"
 
 [node name="AmmoLabel" type="Label" parent="TopInterface"]
@@ -153,7 +143,7 @@ margin_left = 112.0
 margin_top = 37.0
 margin_right = 200.0
 margin_bottom = 57.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = ExtResource( 15 )
 text = "0/0"
 
 [node name="GunButtons" type="Control" parent="TopInterface"]
@@ -210,35 +200,35 @@ texture_pressed = ExtResource( 13 )
 expand = true
 
 [node name="MenuButtons" type="Control" parent="TopInterface"]
-margin_left = 864.0
+margin_left = 763.0
 margin_top = 8.0
 margin_right = 1016.0
 margin_bottom = 56.0
 script = ExtResource( 7 )
 
 [node name="BuildButton" type="TextureButton" parent="TopInterface/MenuButtons"]
-margin_left = -85.0
-margin_top = 9.0
-margin_right = -6.0
-margin_bottom = 41.0
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 85.0
+margin_bottom = 38.0
 toggle_mode = true
 texture_normal = ExtResource( 18 )
 expand = true
 
 [node name="ShopButton" type="TextureButton" parent="TopInterface/MenuButtons"]
-margin_left = -6.0
-margin_top = 9.0
-margin_right = 69.0
-margin_bottom = 41.0
+margin_left = 85.0
+margin_top = 6.0
+margin_right = 160.0
+margin_bottom = 38.0
 toggle_mode = true
 texture_normal = ExtResource( 17 )
 expand = true
 
 [node name="MenuButton" type="TextureButton" parent="TopInterface/MenuButtons"]
-margin_left = 69.0
-margin_top = 9.0
-margin_right = 150.0
-margin_bottom = 41.0
+margin_left = 160.0
+margin_top = 6.0
+margin_right = 241.0
+margin_bottom = 38.0
 toggle_mode = true
 texture_normal = ExtResource( 16 )
 expand = true
