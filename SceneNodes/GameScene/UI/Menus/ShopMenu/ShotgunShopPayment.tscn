@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/GameScene/UI/Menus/Functionality/ShopMenu/Upgrades/DamagePurchase.cs" type="Script" id=1]
 [ext_resource path="res://Scripts/GameScene/UI/Menus/Functionality/ShopMenu/AmmoPurchase.cs" type="Script" id=3]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Scripts/GameScene/UI/Menus/Functionality/ShopMenu/Upgrades/CapacityPurchase.cs" type="Script" id=6]
 [ext_resource path="res://Scripts/GameScene/UI/Menus/Functionality/ShopMenu/Upgrades/ReloadSpeedPurchase.cs" type="Script" id=7]
 [ext_resource path="res://Scripts/GameScene/UI/Menus/Functionality/ShopMenu/GunPurchase.cs" type="Script" id=8]
-[ext_resource path="res://Scripts/GameScene/UI/Menus/Functionality/ShopMenu/Upgrades/ExplosivePurchase.cs" type="Script" id=9]
 [ext_resource path="res://Scripts/GameScene/UI/Menus/Functionality/ShopMenu/Upgrades/FiringSpeedPurchase.cs" type="Script" id=10]
 [ext_resource path="res://Scripts/GameScene/UI/Menus/Functionality/ShopMenu/GunPayment.cs" type="Script" id=11]
 [ext_resource path="res://Resources/Fonts/Tiny5-Regular.tres" type="DynamicFont" id=12]
@@ -50,7 +49,7 @@ margin_bottom = 80.0
 script = ExtResource( 11 )
 gunPurchaseNodePath = NodePath("GunPanel/GunPurchase")
 ammoPurchaseNodePath = NodePath("GunPanel/AmmoPurchase")
-upgradeNodePaths = [ NodePath("UpgradePanel/AccuracyPurchase"), NodePath("UpgradePanel/FiringSpeedPurchase"), NodePath("UpgradePanel/DamagePurchase"), NodePath("UpgradePanel/CapacityPurchase"), NodePath("UpgradePanel/ReloadSpeedPurchase"), NodePath("SpecialUpgradePanel/ExplosivePurchase") ]
+upgradeNodePaths = [ NodePath("UpgradePanel/AccuracyPurchase"), NodePath("UpgradePanel/FiringSpeedPurchase"), NodePath("UpgradePanel/DamagePurchase"), NodePath("UpgradePanel/CapacityPurchase"), NodePath("UpgradePanel/ReloadSpeedPurchase") ]
 
 [node name="GunPanel" type="Panel" parent="."]
 margin_right = 160.0
@@ -71,7 +70,7 @@ margin_right = 96.0
 margin_bottom = 24.0
 rect_pivot_offset = Vector2( 64, 8 )
 custom_fonts/font = ExtResource( 12 )
-text = "$200"
+text = "$500"
 align = 1
 
 [node name="PurchaseButton" type="Button" parent="GunPanel/GunPurchase"]
@@ -99,7 +98,7 @@ margin_right = 40.0
 margin_bottom = 24.0
 rect_pivot_offset = Vector2( 64, 8 )
 custom_fonts/font = ExtResource( 12 )
-text = "$5"
+text = "$20"
 align = 1
 
 [node name="PurchaseButton" type="Button" parent="GunPanel/AmmoPurchase"]
@@ -133,7 +132,7 @@ margin_right = 72.0
 margin_bottom = 24.0
 rect_pivot_offset = Vector2( 64, 8 )
 custom_fonts/font = ExtResource( 12 )
-text = "$10"
+text = "$200"
 align = 1
 
 [node name="PurchaseButton" type="Button" parent="UpgradePanel/AccuracyPurchase"]
@@ -170,7 +169,7 @@ margin_right = 88.0
 margin_bottom = 24.0
 rect_pivot_offset = Vector2( 64, 8 )
 custom_fonts/font = ExtResource( 12 )
-text = "$10"
+text = "$200"
 align = 1
 
 [node name="PurchaseButton" type="Button" parent="UpgradePanel/FiringSpeedPurchase"]
@@ -207,7 +206,7 @@ margin_right = 64.0
 margin_bottom = 24.0
 rect_pivot_offset = Vector2( 64, 8 )
 custom_fonts/font = ExtResource( 12 )
-text = "$10"
+text = "$200"
 align = 1
 
 [node name="PurchaseButton" type="Button" parent="UpgradePanel/DamagePurchase"]
@@ -244,7 +243,7 @@ margin_right = 72.0
 margin_bottom = 24.0
 rect_pivot_offset = Vector2( 64, 8 )
 custom_fonts/font = ExtResource( 12 )
-text = "$10"
+text = "$200"
 align = 1
 
 [node name="PurchaseButton" type="Button" parent="UpgradePanel/CapacityPurchase"]
@@ -281,7 +280,7 @@ margin_right = 96.0
 margin_bottom = 24.0
 rect_pivot_offset = Vector2( 64, 8 )
 custom_fonts/font = ExtResource( 12 )
-text = "$10"
+text = "$200"
 align = 1
 
 [node name="PurchaseButton" type="Button" parent="UpgradePanel/ReloadSpeedPurchase"]
@@ -305,40 +304,6 @@ text = "0"
 align = 1
 valign = 1
 
-[node name="SpecialUpgradePanel" type="Panel" parent="."]
-margin_left = 616.0
-margin_right = 768.0
-margin_bottom = 56.0
-custom_styles/panel = SubResource( 1 )
-
-[node name="ExplosivePurchase" type="Control" parent="SpecialUpgradePanel"]
-margin_left = 8.0
-margin_right = 144.0
-margin_bottom = 56.0
-script = ExtResource( 9 )
-gunPaymentPath = NodePath("../..")
-
-[node name="CostLabel" type="Label" parent="SpecialUpgradePanel/ExplosivePurchase"]
-margin_top = 6.0
-margin_right = 136.0
-margin_bottom = 24.0
-rect_pivot_offset = Vector2( 64, 8 )
-custom_fonts/font = ExtResource( 12 )
-text = "$2500"
-align = 1
-
-[node name="PurchaseButton" type="Button" parent="SpecialUpgradePanel/ExplosivePurchase"]
-margin_top = 24.0
-margin_right = 136.0
-margin_bottom = 48.0
-rect_pivot_offset = Vector2( 72, 8 )
-custom_fonts/font = ExtResource( 12 )
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 2 )
-text = "Explosive Bullets"
-
 [connection signal="pressed" from="GunPanel/GunPurchase/PurchaseButton" to="GunPanel/GunPurchase" method="_on_PurchaseButton_pressed"]
 [connection signal="pressed" from="GunPanel/AmmoPurchase/PurchaseButton" to="GunPanel/AmmoPurchase" method="_on_PurchaseButton_pressed"]
 [connection signal="pressed" from="UpgradePanel/AccuracyPurchase/PurchaseButton" to="UpgradePanel/AccuracyPurchase" method="_on_PurchaseButton_pressed"]
@@ -346,4 +311,3 @@ text = "Explosive Bullets"
 [connection signal="pressed" from="UpgradePanel/DamagePurchase/PurchaseButton" to="UpgradePanel/DamagePurchase" method="_on_PurchaseButton_pressed"]
 [connection signal="pressed" from="UpgradePanel/CapacityPurchase/PurchaseButton" to="UpgradePanel/CapacityPurchase" method="_on_PurchaseButton_pressed"]
 [connection signal="pressed" from="UpgradePanel/ReloadSpeedPurchase/PurchaseButton" to="UpgradePanel/ReloadSpeedPurchase" method="_on_PurchaseButton_pressed"]
-[connection signal="pressed" from="SpecialUpgradePanel/ExplosivePurchase/PurchaseButton" to="SpecialUpgradePanel/ExplosivePurchase" method="_on_PurchaseButton_pressed"]

@@ -2,15 +2,14 @@ using Godot;
 using System;
 
 namespace Game {
-	public class Projectile : Node2D {
-		public Node2D nodeFiredFrom;
-		
+	public class Projectile : Node2D {		
 		[Export] public float damage;
 		[Export] public float speed;
 		[Export] public bool explosive = false;
 		[Export] public bool napalmExplosive = false;
 		[Export] public NodePath launchComponentPath;
 		
+		public Node2D nodeFiredFrom;
 		public bool affectEnemies = false;
 		public bool affectStructures = false;
 		

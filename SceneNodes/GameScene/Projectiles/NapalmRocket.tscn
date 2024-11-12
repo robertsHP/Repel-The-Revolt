@@ -9,6 +9,9 @@ extents = Vector2( 8.5, 5 )
 
 [node name="NapalmRocket" type="Node2D" groups=["Projectiles"]]
 script = ExtResource( 2 )
+damage = 6.0
+speed = 1000.0
+explosive = true
 launchComponentPath = NodePath("LaunchComponent")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -27,3 +30,5 @@ position = Vector2( 0.5, -1.19209e-07 )
 scale = Vector2( 0.85, 0.5 )
 
 [node name="LaunchComponent" parent="." instance=ExtResource( 4 )]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

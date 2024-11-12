@@ -54,14 +54,17 @@ namespace Game {
 			spawnDelayTimer.Start();
 		}
 		public void SpawnMethod () {
-			int randNum = rng.RandiRange(0, spawners.Count - 1);
-			Sprite spawner = (Sprite) spawners[randNum];
-			SpawnEnemy(spawner);
+			if(!GameScene.paused) {
+				int randNum = rng.RandiRange(0, spawners.Count - 1);
+				Sprite spawner = (Sprite) spawners[randNum];
+				SpawnEnemy(spawner);	
+			}
 		}
 		public void SpawnEnemy (Sprite spawner) {
 			int rangeNum = rng.RandiRange(0, spawnRange);
 			int i = 0;
-			int currentRangeCount = 0, prevRangeCount = 0;
+			int currentRangeCount = 0;
+			int prevRangeCount = 0;
 			
 			while (i < rangeNums.Length) {
 				currentRangeCount += rangeNums[i];

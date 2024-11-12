@@ -9,9 +9,8 @@ extents = Vector2( 14.5, 2 )
 
 [node name="Shell" type="Node2D" groups=["Projectiles"]]
 script = ExtResource( 1 )
-damage = 2
-speed = 1500
-accuracy = 10
+damage = 2.0
+speed = 1000.0
 launchComponentPath = NodePath("LaunchComponent")
 
 [node name="Area2D" type="Area2D" parent="."]

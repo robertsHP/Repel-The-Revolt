@@ -47,8 +47,9 @@ namespace Game {
 			enemiesAttached.Add(enemy);
 		}
 		private void _on_Structure_body_entered(Node2D node) {
-			if (node.IsInGroup("Enemies"))
+			if (node.IsInGroup("Enemies")) {
 				AttachEnemy((Enemy) node);
+			}
 		}
 	}
 }

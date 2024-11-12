@@ -71,7 +71,7 @@ margin_right = 96.0
 margin_bottom = 22.0
 rect_pivot_offset = Vector2( 64, 8 )
 custom_fonts/font = ExtResource( 12 )
-text = "$1000"
+text = "$1100"
 align = 1
 
 [node name="PurchaseButton" type="Button" parent="GunPanel/GunPurchase"]
@@ -99,7 +99,7 @@ margin_right = 40.0
 margin_bottom = 22.0
 rect_pivot_offset = Vector2( 64, 8 )
 custom_fonts/font = ExtResource( 12 )
-text = "$15"
+text = "$33"
 align = 1
 
 [node name="PurchaseButton" type="Button" parent="GunPanel/AmmoPurchase"]
@@ -135,7 +135,7 @@ margin_right = 72.0
 margin_bottom = 22.0
 rect_pivot_offset = Vector2( 64, 8 )
 custom_fonts/font = ExtResource( 12 )
-text = "$10"
+text = "$100"
 align = 1
 
 [node name="PurchaseButton" type="Button" parent="UpgradePanel/AccuracyPurchase"]
@@ -172,7 +172,7 @@ margin_right = 88.0
 margin_bottom = 22.0
 rect_pivot_offset = Vector2( 64, 8 )
 custom_fonts/font = ExtResource( 12 )
-text = "$10"
+text = "$100"
 align = 1
 
 [node name="PurchaseButton" type="Button" parent="UpgradePanel/FiringSpeedPurchase"]
@@ -209,7 +209,7 @@ margin_right = 64.0
 margin_bottom = 22.0
 rect_pivot_offset = Vector2( 64, 8 )
 custom_fonts/font = ExtResource( 12 )
-text = "$10"
+text = "$100"
 align = 1
 
 [node name="PurchaseButton" type="Button" parent="UpgradePanel/DamagePurchase"]
@@ -246,7 +246,7 @@ margin_right = 72.0
 margin_bottom = 22.0
 rect_pivot_offset = Vector2( 64, 8 )
 custom_fonts/font = ExtResource( 12 )
-text = "$10"
+text = "$100"
 align = 1
 
 [node name="PurchaseButton" type="Button" parent="UpgradePanel/CapacityPurchase"]
@@ -283,7 +283,7 @@ margin_right = 96.0
 margin_bottom = 22.0
 rect_pivot_offset = Vector2( 64, 8 )
 custom_fonts/font = ExtResource( 12 )
-text = "$10"
+text = "$100"
 align = 1
 
 [node name="PurchaseButton" type="Button" parent="UpgradePanel/ReloadSpeedPurchase"]

@@ -40,10 +40,9 @@ namespace Game {
 		private void SpawnStructureSprite (Type obstacleType) {
 			Sprite obstacleSprite = new Sprite ();
 
-			obstacleSprite.Name = obstacleType.Name;
-
 			var txtr = (Texture) Global.M.LoadTexture("Obstacles/"+obstacleType.Name+".png");
 
+			obstacleSprite.Name = obstacleType.Name;
 			obstacleSprite.Texture = txtr;
 			obstacleSprite.Position = GameScene.ui.selectionBox.Position;
 
@@ -52,6 +51,7 @@ namespace Game {
 			GameScene.ui.selectionBox.tempBuildingSprite = obstacleSprite;
 			GameScene.ui.selectionBox.tempBuildingType = obstacleType;
 			GameScene.ui.selectionBox.Show();
+
 			GameScene.state = GameScene.State.TilePlace;
 			
 			QueueFree();

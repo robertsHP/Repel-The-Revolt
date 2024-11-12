@@ -5,13 +5,13 @@
 [ext_resource path="res://SceneNodes/GameScene/Enemies/Blood.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4, 5 )
+extents = Vector2( 5, 6 )
 
 [node name="SuicideBomber" type="KinematicBody2D" groups=["Enemies"]]
 script = ExtResource( 2 )
 health = 1
 speed = 70
-moneyAfterKilling = 10
+moneyAfterKilling = 5
 partToDrop = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]

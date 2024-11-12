@@ -6,7 +6,7 @@
 [ext_resource path="res://SceneNodes/GameScene/Enemies/Blood.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 2, 5 )
+extents = Vector2( 3, 6 )
 
 [sub_resource type="CircleShape2D" id=6]
 radius = 82.6075
@@ -15,10 +15,15 @@ radius = 82.6075
 script = ExtResource( 3 )
 health = 8.0
 speed = 20.0
-moneyAfterKilling = 60
+moneyAfterKilling = 5
 partToDrop = ExtResource( 4 )
 weaponPath = NodePath("RPG")
 timeBeforeShootingNext = 5.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2.98023e-08, 1.19209e-07 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemies"]]
 shape = SubResource( 5 )
@@ -31,8 +36,3 @@ shape = SubResource( 6 )
 [node name="RPG" parent="." instance=ExtResource( 1 )]
 affectEnemies = false
 affectStructures = true
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 2.98023e-08, 1.19209e-07 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 2 )

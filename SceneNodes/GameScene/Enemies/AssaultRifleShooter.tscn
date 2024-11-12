@@ -6,7 +6,7 @@
 [ext_resource path="res://SceneNodes/GameScene/Enemies/Blood.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 2, 5 )
+extents = Vector2( 3, 6 )
 
 [sub_resource type="CircleShape2D" id=6]
 radius = 82.6075
@@ -15,7 +15,7 @@ radius = 82.6075
 script = ExtResource( 3 )
 health = 6.0
 speed = 45.0
-moneyAfterKilling = 50
+moneyAfterKilling = 5
 partToDrop = ExtResource( 4 )
 weaponPath = NodePath("AssaultRifle")
 timeBeforeShootingNext = 1.0

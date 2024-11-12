@@ -33,6 +33,7 @@ namespace Game {
 		public override void _Ready () {
 			fireTimer = GetNode<DeltaTimer>(fireTimerPath);
 			reloadTimer = GetNode<DeltaTimer>(reloadTimerPath);
+
 			LoadTimer(fireTimer, fireSecondsMax, "FireTimerMethod");
 			LoadTimer(reloadTimer, reloadSecondsMax, "ReloadTimerMethod");
 		}
@@ -65,6 +66,7 @@ namespace Game {
 			if(reloadVal >= 100) {
 				if(!infiniteAmmo) {
 					uint ammoLeftover = ammoLimit - ammoInWeapon;
+					
 					ammoInWeapon += ammoLeftover;
 					inventoryAmmo -= ammoLeftover;
 				} else {

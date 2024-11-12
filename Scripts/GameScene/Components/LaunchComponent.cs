@@ -32,9 +32,11 @@ namespace Game {
 		}
 		public float MoveWhileSlowingDown (float speed, float delta, float slowDown) {
 			if(move) {
-				if(speed <= 0)
+				if(speed <= 0) {
 					Stop();
+				}
 				float rotation = parent.Rotation;
+
 				parent.GlobalPosition += new Vector2(speed, 0).Rotated(rotation) * delta;
 				speed -= slowDown;
 			}
