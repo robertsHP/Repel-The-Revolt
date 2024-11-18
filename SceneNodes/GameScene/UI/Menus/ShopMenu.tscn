@@ -102,26 +102,28 @@ custom_styles/panel = SubResource( 3 )
 
 [node name="Guns" type="Control" parent="CoverOverPanel"]
 margin_left = 24.0
-margin_top = 176.0
+margin_top = 103.0
 margin_right = 792.0
 margin_bottom = 424.0
 
 [node name="PistolShopPayment" parent="CoverOverPanel/Guns" instance=ExtResource( 5 )]
-margin_top = -66.0
-margin_bottom = 14.0
+margin_top = 10.0
+margin_bottom = 90.0
 shopMenuPath = NodePath("../../..")
 
 [node name="ShotgunShopPayment" parent="CoverOverPanel/Guns" instance=ExtResource( 6 )]
-margin_top = 24.0
-margin_bottom = 104.0
+margin_top = 98.0
+margin_bottom = 178.0
 shopMenuPath = NodePath("../../..")
 
 [node name="AssaultRifleShopPayment" parent="CoverOverPanel/Guns" instance=ExtResource( 3 )]
-margin_top = 112.0
-margin_bottom = 192.0
+margin_top = 186.0
+margin_bottom = 266.0
 shopMenuPath = NodePath("../../..")
 
 [node name="RPGShopPayment" parent="CoverOverPanel/Guns" instance=ExtResource( 1 )]
+margin_top = 273.0
+margin_bottom = 353.0
 shopMenuPath = NodePath("../../..")
 
 [node name="Building" type="Panel" parent="CoverOverPanel"]

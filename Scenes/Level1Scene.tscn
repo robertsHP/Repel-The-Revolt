@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://SceneNodes/GameScene/Obstacles/MainBuilding.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SceneNodes/GameScene/UI/UI.tscn" type="PackedScene" id=2]
@@ -11,7 +11,6 @@
 [ext_resource path="res://Resources/Obstacles/Spawner.png" type="Texture" id=9]
 [ext_resource path="res://SceneNodes/GameScene/Enemies/RPGShooter.tscn" type="PackedScene" id=10]
 [ext_resource path="res://SceneNodes/GameScene/Enemies/ShotgunShooter.tscn" type="PackedScene" id=11]
-[ext_resource path="res://SceneNodes/GameScene/Weapons/RPG.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scripts/GameScene/Sounds.cs" type="Script" id=13]
 [ext_resource path="res://SceneNodes/GameScene/Enemies/SuicideBomber.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scripts/GameScene/Projectiles.cs" type="Script" id=15]
@@ -20,8 +19,8 @@
 [ext_resource path="res://SceneNodes/GameScene/Enemies/PistolShooter.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Resources/Sand.png" type="Texture" id=19]
 [ext_resource path="res://Resources/MuddyGrass.png" type="Texture" id=20]
-[ext_resource path="res://SceneNodes/GameScene/Weapons/AssaultRifle.tscn" type="PackedScene" id=21]
-[ext_resource path="res://SceneNodes/GameScene/Weapons/Shotgun.tscn" type="PackedScene" id=22]
+[ext_resource path="res://SceneNodes/GameScene/Weapons/Shotgun.tscn" type="PackedScene" id=21]
+[ext_resource path="res://SceneNodes/GameScene/Weapons/AssaultRifle.tscn" type="PackedScene" id=22]
 
 [sub_resource type="NavigationPolygon" id=4]
 vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -105,11 +104,9 @@ script = ExtResource( 16 )
 
 [node name="Pistol" parent="Structures/MainBuilding/Weapons" instance=ExtResource( 17 )]
 
-[node name="AssaultRifle" parent="Structures/MainBuilding/Weapons" instance=ExtResource( 21 )]
+[node name="AssaultRifle" parent="Structures/MainBuilding/Weapons" instance=ExtResource( 22 )]
 
-[node name="RPG" parent="Structures/MainBuilding/Weapons" instance=ExtResource( 12 )]
-
-[node name="Shotgun" parent="Structures/MainBuilding/Weapons" instance=ExtResource( 22 )]
+[node name="Shotgun" parent="Structures/MainBuilding/Weapons" instance=ExtResource( 21 )]
 
 [node name="Enemies" type="Node2D" parent="."]
 z_index = 1
@@ -121,9 +118,9 @@ script = ExtResource( 15 )
 [node name="Spawners" type="Node2D" parent="."]
 z_index = 2
 script = ExtResource( 7 )
-startingSpawnRange = 1
-spawnRangeIncrement = 1
-maximumSpawnRange = 1
+startingSpawnRange = 60
+spawnRangeIncrement = 20
+maximumSpawnRange = 50
 startingWaitTime = 3.0
 waitTimeDecrement = 0.2
 enemies = [ ExtResource( 8 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 10 ) ]

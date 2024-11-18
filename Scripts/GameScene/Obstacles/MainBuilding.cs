@@ -36,13 +36,17 @@ namespace Game {
 		}
 		public void LoadWeapons () {
 			Godot.Collections.Array weaponsTemp = weaponsNode.GetChildren();
-			foreach (Weapon weapon in weaponsTemp)
+
+			foreach (Weapon weapon in weaponsTemp) {
 				weapons.Add(weapon.Name.Replace(" ", ""), weapon);
-			if(weapons.Count != 0)
+			}
+			if(weapons.Count != 0) {
 				weapon = (Weapon) weapons.First().Value;
+			}
 		}
 		public void LoadWeapon (PackedScene weaponScene) {
 			Weapon weapon = (Weapon) weaponScene.Instance();
+			
 			weapons.Add(weapon.Name.Replace(" ", ""), weapon);
 			weaponsNode.AddChild(weapon);
 		}

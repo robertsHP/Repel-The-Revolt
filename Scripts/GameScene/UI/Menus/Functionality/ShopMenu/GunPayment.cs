@@ -19,6 +19,7 @@ namespace Game {
 			upgradeNodes = new List<ShopPurchaseNode>();
 			gunPurchaseNode = GetNode<GunPurchase>(gunPurchaseNodePath);
 			ammoPurchaseNode = GetNode<AmmoPurchase>(ammoPurchaseNodePath);
+			
 			foreach (NodePath upgradeNodePath in upgradeNodePaths) {
 				upgradeNodes.Add(GetNode<ShopPurchaseNode>(upgradeNodePath));
 			}

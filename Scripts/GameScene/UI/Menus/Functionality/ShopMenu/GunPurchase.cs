@@ -12,9 +12,9 @@ namespace Game {
 		}
 		public void UpdateButtonInfo () {
 			if(GameScene.mainBuilding.IsWeaponLoaded(purchaseButton.Text)) {
-				purchasedGun = GameScene.mainBuilding.GetWeapon(
-					purchaseButton.Text);
+				purchasedGun = GameScene.mainBuilding.GetWeapon(purchaseButton.Text);
 				projectileType = purchasedGun.GetProjectileType();
+				
 				purchaseButton.Disabled = true;
 			} else {
 				purchaseButton.Disabled = false;
@@ -30,10 +30,6 @@ namespace Game {
 			} else {
 				GameScene.ui.LoadTemporaryMessageBox("You dont have enough money.");
 			}
-		}
-		public string GetWeaponNameFromResourcePath () {
-			int index = weaponScene.ResourcePath.LastIndexOf("/");
-			return weaponScene.ResourcePath.Substring(index + 1).Split(".")[0];
 		}
 	}
 }
