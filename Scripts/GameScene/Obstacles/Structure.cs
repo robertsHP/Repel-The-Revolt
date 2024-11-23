@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.CodeDom.Compiler;
 
 namespace Game {
 	public class Structure : Obstacle {
@@ -51,5 +52,15 @@ namespace Game {
 				AttachEnemy((Enemy) node);
 			}
 		}
+		private void _on_Structure_area_entered(Area2D area) {
+			if (area.IsInGroup("Projectiles")) {
+				Projectile projectile = (Projectile) area;
+
+				if(projectile.nodeFiredFrom != this) {
+					Damage(projectile.damage);
+				}
+			}
+		}
 	}
 }
+

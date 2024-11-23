@@ -84,7 +84,7 @@ namespace Game {
 				ammoInWeapon -= 1;
 				if(audioStream != null)
 					GameScene.sounds.PlayNewSound(audioStream, GlobalPosition);
-				FireProjectile(direction);
+				FireProjectile(user, direction);
 				StartFireTimer();
 			}
 		}
@@ -93,7 +93,7 @@ namespace Game {
 				StartReloadTimer();
 			}
 		}
-		public virtual void FireProjectile (Vector2 direction) {}
+		public virtual void FireProjectile (Node2D user, Vector2 direction) {}
 		public virtual Projectile GetProjectileType () { return null;}
 	}
 }

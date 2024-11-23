@@ -57,7 +57,7 @@ namespace Game {
 			if(!GameScene.paused) {
 				int randNum = rng.RandiRange(0, spawners.Count - 1);
 				Sprite spawner = (Sprite) spawners[randNum];
-				SpawnEnemy(spawner);	
+				SpawnEnemy(spawner);
 			}
 		}
 		public void SpawnEnemy (Sprite spawner) {

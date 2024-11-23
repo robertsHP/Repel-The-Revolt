@@ -51,6 +51,7 @@ shape = SubResource( 8 )
 
 [node name="AIShooter" parent="Personel" instance=ExtResource( 3 )]
 
+[connection signal="area_entered" from="." to="." method="_on_Structure_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Structure_body_entered"]
 [connection signal="mouse_entered" from="." to="." method="_on_Obstacle_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Obstacle_mouse_exited"]

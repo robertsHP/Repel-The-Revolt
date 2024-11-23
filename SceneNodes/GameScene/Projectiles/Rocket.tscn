@@ -7,16 +7,14 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11, 5 )
 
-[node name="Rocket" type="Node2D" groups=["Projectiles"]]
+[node name="Rocket" type="Area2D" groups=["Projectiles"]]
 script = ExtResource( 2 )
 damage = 6.0
 speed = 1000.0
 explosive = true
 launchComponentPath = NodePath("LaunchComponent")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -30,5 +28,5 @@ scale = Vector2( 1.1, 0.5 )
 
 [node name="LaunchComponent" parent="." instance=ExtResource( 3 )]
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Projectile_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

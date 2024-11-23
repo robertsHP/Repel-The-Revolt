@@ -3,8 +3,8 @@ using System;
 
 namespace Game {
 	public class Pistol : Weapon {
-		public override void FireProjectile (Vector2 direction) {
-			GameScene.projectiles.FireProjectile("PistolBullet", this, direction);
+		public override void FireProjectile (Node2D user, Vector2 direction) {
+			GameScene.projectiles.FireProjectile("PistolBullet", this, direction, user);
 		}
 		public override Projectile GetProjectileType () {
 			Projectile projectile = (Projectile) GameScene.LoadSceneNode(

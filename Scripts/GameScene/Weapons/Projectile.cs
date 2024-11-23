@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 namespace Game {
-	public class Projectile : Node2D {		
+	public class Projectile : Area2D {		
 		[Export] public float damage;
 		[Export] public float speed;
 		[Export] public bool explosive = false;
@@ -10,18 +10,11 @@ namespace Game {
 		[Export] public NodePath launchComponentPath;
 		
 		public Node2D nodeFiredFrom;
+		public Weapon gunFiredFrom;
 		public bool affectEnemies = false;
 		public bool affectStructures = false;
 		
 		public LaunchComponent launchComponent;
-		
-		//!!!!!SET BEFORE USING
-		public void SetShootingInfo (Vector2 direction, Weapon weapon) {
-			launchComponent.SetLaunchDirection(direction, weapon.accuracy);
-			damage += weapon.projectileDamageBoost;
-			affectEnemies = weapon.affectEnemies;
-			affectStructures = weapon.affectStructures;
-		}
 		
 		public override void _Ready () {
 			launchComponent = GetNode<LaunchComponent>(launchComponentPath);
@@ -57,7 +50,7 @@ namespace Game {
 		private void _on_VisibilityNotifier2D_screen_exited() {
 			Destroy();
 		}
-		private void _on_Area2D_body_entered(Node2D node) {
+		private void _on_Projectile_body_entered(Node2D node) {
 			OnHit(node);
 		}
 	}

@@ -23,6 +23,7 @@ namespace Game {
 			}
 			Process1(delta);
 		}
+		
 		protected virtual void Ready1 () {}
 		protected virtual void Process1 (float delta) {}
 		protected virtual void OnClick () {}

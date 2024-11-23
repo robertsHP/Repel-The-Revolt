@@ -5,12 +5,12 @@ namespace Game {
 	public class RPG : Weapon {
 		public bool fireUpgrade = false;
 		
-		public override void FireProjectile (Vector2 direction) {
+		public override void FireProjectile (Node2D user, Vector2 direction) {
 			Projectile projectile;
 			if(!fireUpgrade) {
-				projectile = GameScene.projectiles.FireProjectile("Rocket", this, direction);
+				projectile = GameScene.projectiles.FireProjectile("Rocket", this, direction, user);
 			} else {
-				projectile = GameScene.projectiles.FireProjectile("NapalmRocket", this, direction);
+				projectile = GameScene.projectiles.FireProjectile("NapalmRocket", this, direction, user);
 			}
 			if(projectile != null) {
 				
