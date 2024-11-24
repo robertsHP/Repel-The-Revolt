@@ -16,7 +16,7 @@ bg_color = Color( 0.984314, 0.105882, 0.105882, 1 )
 [sub_resource type="CircleShape2D" id=8]
 radius = 5.0
 
-[node name="TowerBuilding" type="Area2D" groups=["Obstacles", "Structures"]]
+[node name="TowerBuilding" type="Area2D" groups=["Obstacles", "Player", "Structures"]]
 script = ExtResource( 1 )
 collisionShapePath = NodePath("CollisionShape2D")
 healthBarPath = NodePath("HealthBar")
@@ -51,7 +51,6 @@ shape = SubResource( 8 )
 
 [node name="AIShooter" parent="Personel" instance=ExtResource( 3 )]
 
-[connection signal="area_entered" from="." to="." method="_on_Structure_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Structure_body_entered"]
 [connection signal="mouse_entered" from="." to="." method="_on_Obstacle_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Obstacle_mouse_exited"]

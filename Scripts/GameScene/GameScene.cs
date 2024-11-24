@@ -4,6 +4,7 @@ using System;
 
 namespace Game {
 	public class GameScene : Node2D {
+		[Export] public uint startingPlayerMoney = 0;
 		[Export] public NodePath tileMapPath;
 		[Export] public NodePath soundsNodePath;
 		[Export] public NodePath groundNodePath;
@@ -46,6 +47,8 @@ namespace Game {
 			
 			ui.Init();
 			pathFinding.CreateNavigationMap();
+
+			mainBuilding.money = startingPlayerMoney;
 		}
 		public static Node LoadSceneNode (string path) {
 			return (Node) Global.M.LoadSceneNode("GameScene/"+path);

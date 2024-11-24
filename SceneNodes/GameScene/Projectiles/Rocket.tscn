@@ -28,5 +28,6 @@ scale = Vector2( 1.1, 0.5 )
 
 [node name="LaunchComponent" parent="." instance=ExtResource( 3 )]
 
+[connection signal="area_entered" from="." to="." method="_on_Projectile_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Projectile_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

@@ -16,7 +16,7 @@ bg_color = Color( 0.984314, 0.105882, 0.105882, 1 )
 [sub_resource type="CircleShape2D" id=16]
 radius = 96.0
 
-[node name="MainBuilding" type="Area2D" groups=["Obstacles", "Structures"]]
+[node name="MainBuilding" type="Area2D" groups=["Obstacles", "Player", "Structures"]]
 position = Vector2( 512, 96 )
 script = ExtResource( 1 )
 collisionShapePath = NodePath("CollisionShape2D")
@@ -59,7 +59,6 @@ show_behind_parent = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ViewArea"]
 shape = SubResource( 16 )
 
-[connection signal="area_entered" from="." to="." method="_on_Structure_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Structure_body_entered"]
 [connection signal="mouse_entered" from="." to="." method="_on_Obstacle_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Obstacle_mouse_exited"]

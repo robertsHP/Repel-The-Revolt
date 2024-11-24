@@ -11,6 +11,9 @@ namespace Game {
 		
 		public Node2D nodeFiredFrom;
 		public Weapon gunFiredFrom;
+
+
+
 		public bool affectEnemies = false;
 		public bool affectStructures = false;
 		
@@ -24,14 +27,12 @@ namespace Game {
 			launchComponent.Move(speed, delta);
 		}
 		protected void OnHit (Node2D node) {
-			if(node.IsInGroup("Enemies")) {
-				if(affectEnemies) {
+			if(nodeFiredFrom != node) {
+				if(node.IsInGroup("Enemies")) {
 					Enemy enemy = (Enemy) node;
 					enemy.Damage(damage, false, launchComponent.direction);
 					Destroy();
-				}
-			} else if (node.IsInGroup("Structures")) {
-				if(affectStructures) {
+				} else if (node.IsInGroup("Structures")) {
 					Structure structure = (Structure) node;
 					structure.Damage(damage);
 					Destroy();
@@ -51,6 +52,9 @@ namespace Game {
 			Destroy();
 		}
 		private void _on_Projectile_body_entered(Node2D node) {
+			OnHit(node);
+		}
+		private void _on_Projectile_area_entered(Node2D node) {
 			OnHit(node);
 		}
 	}
